@@ -1,0 +1,24 @@
+{
+
+  "manifest_version": 3,
+  "name": "informit-dedupe",
+  "version": "0.1",
+
+  "description": "Deduplicates informit search results",
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.informit.org/*"],
+      "js": ["jquery-3.1.1.slim.min.js","dedupe.js"]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "Clear duplicate list"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
